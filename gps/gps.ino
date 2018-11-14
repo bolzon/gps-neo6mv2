@@ -14,31 +14,28 @@
 // https://www.u-blox.com/sites/default/files/products/documents/NEO-6_DataSheet_(GPS.G6-HW-09005).pdf
 
 // pins configuration
-static const int tx_pin = 3;
-static const int rx_pin = 4;
+static const int tx_pin = 4; // must be RX on module
+static const int rx_pin = 3; // must be TX on module
 
 TinyGPSPlus gps;
 SoftwareSerial serialGPS(rx_pin, tx_pin);
 
 void setup() {
 
-  // starts the serial port to communicate with the GPS module
-  serialGPS.begin(9600);
-
   // starts the serial port to print results
   Serial.begin(115200);
-  Serial.print(F("Library version: "));
+  Serial.print(F("GPS library version: "));
   Serial.println(TinyGPSPlus::libraryVersion());
+
+  // starts the serial port to communicate with the GPS module
+  serialGPS.begin(9600);
 }
 
 void loop() {
-
   while (serialGPS.available() > 0) {
-    char data = serialGPS.read();
-    Serial.println(data);
     // encode method receives information until
     // it's finished, then calls displayInfo()
-    if (gps.encode(data)) {
+    if (gps.encode(serialGPS.read())) {
       displayInfo();
     }
   }
@@ -51,7 +48,7 @@ void displayInfo() {
   Serial.print(F("Location  : "));
   if (gps.location.isValid()) {
     Serial.print(gps.location.lat(), 6);
-    Serial.print(F(" , "));
+    Serial.print(F(", "));
     Serial.println(gps.location.lng(), 6);
   }
   else {
