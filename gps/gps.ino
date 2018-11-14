@@ -1,6 +1,6 @@
 /**
  * Dextra Digital - IoT Guild
- * Program to get GPS coords from module NEO 6 MV2.
+ * Program to get GPS coords from module NEO-6M.
  * 14/nov/2018
  */
 

@@ -1,6 +1,6 @@
-# POC for GPS module NEO 6 VM2
+# POC for GPS module NEO-6M
 
-This POC is intended to test capabilities of the GPS module [NEO-6 MV2](https://www.u-blox.com/sites/default/files/products/documents/NEO-6_DataSheet_(GPS.G6-HW-09005).pdf), responsible to get current location coordinates.
+This POC is intended to test capabilities of the GPS module [NEO-6M](https://www.u-blox.com/sites/default/files/products/documents/NEO-6_DataSheet_(GPS.G6-HW-09005).pdf), responsible to get current location coordinates.
 
 ## Running
 
