@@ -14,8 +14,8 @@
 // https://www.u-blox.com/sites/default/files/products/documents/NEO-6_DataSheet_(GPS.G6-HW-09005).pdf
 
 // pins configuration
-static const int tx_pin = 4; // must be RX on module
-static const int rx_pin = 3; // must be TX on module
+static const int tx_pin = 4;
+static const int rx_pin = 3;
 
 TinyGPSPlus gps;
 SoftwareSerial serialGPS(rx_pin, tx_pin);
