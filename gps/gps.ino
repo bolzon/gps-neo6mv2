@@ -6,7 +6,7 @@
 
 #include <SoftwareSerial.h>
 
-// this lib makes the interface with the GPS module
+// this lib parses the NMEA string returned by the GPS module
 // https://github.com/mikalhart/TinyGPSPlus/releases
 #include <TinyGPS++.h>
 
